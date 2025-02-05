@@ -1,0 +1,389 @@
+<style type="text/css">
+    :root {
+      --bg: #fff;
+      --container: 1440px;
+    }
+    body{
+        background: var(--bg);
+    }
+    .container {
+        position: relative;
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    section.pathList{
+      padding: 90px 0;
+    }
+    .bd-product-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .bd-product-list-item h3{
+        font-family: "Montserrat", serif;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 24px;
+        margin-top: 0;
+    }
+    .bd-product-list-item-image{
+        position: relative;
+    }
+    .bd-product-list-item-image img{
+        max-width: 100%;
+        width: 100%;
+    }
+    .bd-product-list-item-a{
+        width: 100%;
+        max-width: 238px;
+        height: 48px;
+        background: #212121;
+        font-family: "Open Sans", serif;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 24px;
+        letter-spacing: 1px;
+        color: #FFFFFF;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+    .bd-new_product{
+        position: absolute;
+        top:24px;
+        left: 24px;
+        width:100%;
+        height: 48px;
+        border-radius: 8px;
+        background: #fff;
+        max-width: 140px;
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 24px;
+        color: #000;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .bd-product-title{
+        min-width: 124px;
+        height: 72px;
+        bottom: 33px;
+        right: 24px;
+        position: absolute;
+        background: #fff;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        border-radius: 8px;
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding:0 16px;
+        margin-bottom: 0;
+    }
+    .bd-product-title span{
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .bd-product-list-item p{
+        font-family: Open Sans;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        color: #666666;
+        margin: 24px 0;
+    }
+    .bd-product-colors{
+        position: absolute;
+        left: 24px;
+        bottom: 33px;
+    }
+    .bd-product-colors ul{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 24px;
+    }
+    .bd-product-colors ul li {
+        list-style: none;
+        height: 32px;
+        width: 32px;
+        border-radius: 100%;
+        display: flex;
+    }
+    .bd-product-colors ul li span{
+        height: 32px;
+        width: 32px;
+        border-radius: 100%;
+    }
+    .bd-see-product{
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 48px;
+        color: #212121;
+        text-decoration: underline;
+        text-underline-offset: 18px; /* Çizgi ile yazı arasındaki mesafeyi artır */
+        text-decoration-thickness: 2px; /* Alt çizgi kalınlığı */
+        text-decoration-color: black;  /* Çizgi rengi */
+    }
+    .bd-mobil-product-list-item{
+      display:none;
+    }
+    .bd-desktop-product-list-item{
+      display:unset;
+    }
+    @media only screen and (max-width: 767px) {
+        .bd-mobil-product-list-item{
+          display:unset;
+        }
+        .bd-desktop-product-list-item{
+          display:none;
+        }
+        .container{
+            padding: 0 20px;
+        }
+        .bd-product-list{
+            grid-template-columns: 1fr;
+            display: unset;
+        }
+        .bd-product-list-item h3{
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 36px;
+            letter-spacing: -0.01em;
+        }
+        .bd-product-list-item-a{
+            width: 205px;
+            height: 35px;
+            gap: 12px;
+            opacity: 0px;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 19.07px;
+            letter-spacing: 1px;
+        }
+        .bd-product-list-item p{
+            font-family: Sen;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 21px;
+        }
+        .bd-see-product{
+            font-size: 14px;
+            line-height: 42px;
+        }
+        .bd-new_product{
+            top:8px;
+            left: 8px;
+            width: 105px;
+            height: 32px;
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 24px;
+        }
+        .bd-product-title{
+            right: 8px;
+            bottom: 12px;
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 24px;
+            width: auto;
+            height: auto;
+            padding: 4px 12px;
+        }
+        .bd-product-title span{
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        .bd-product-colors{
+            left: 8px;
+            bottom: 12px;
+        }
+        .bd-product-colors ul{
+            gap: 8px;
+        }
+        .bd-product-colors ul li{
+            width: 18px;
+            height: 18px;
+        }
+        .bd-product-colors ul li span{
+            width: 18px;
+            height: 18px;
+        }
+        .bd-product-list .bd-product-list-item:nth-child(1) .bd-product-list-item-image{
+            display: none;
+        }
+        .owl-carousel.owl-drag .owl-item .item{
+            width: 256px;
+            margin-right: 24px;
+        }
+    }
+</style>
+
+
+
+<section class="pathList">
+	<div class="container">
+      {% if section.settings.collection %}
+        {% assign collection_handle = section.settings.collection %}
+        {% assign collection = collections[collection_handle] %}
+        {% if collection %}
+    		<div class="bd-product-list">
+    			<div class="bd-product-list-item">
+    				<h3>
+    					{{ collection.description }}
+    				</h3>
+    				<a href="{{ collection.url }}" title="{{ collection.title }}" class="bd-product-list-item-a">
+    					SHOP COLLECTION
+    					<img src="https://demo.dentez.com/path/assets/img/chevron-right.svg">
+    				</a>
+    				<div class="bd-product-list-item-image">
+    					<img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection.title }}">
+    				</div>
+    			</div>
+                {% assign last_product = collection.products | last %}
+    			<div class="bd-product-list-item type2 bd-desktop-product-list-item"> 
+                    <div class="bd-product-list-item-image">
+                      <img src="{{ last_product.featured_image | img_url: '652x652' }}" alt="{{ last_product.title }}">
+                      {% if last_product.metafields.custom.new_product == true %}
+                        <span class="bd-new_product">
+                            New Product
+                        </span>
+                        <h2 class="bd-product-title">
+                            {{ last_product.title }}
+                            {% if last_product.price_varies %}
+                              <span>{{ last_product.price_min | money }} - {{ last_product.price_max | money }}</span>
+                            {% else %}
+                              <span>{{ last_product.price | money }}</span>
+                            {% endif %}
+                        </h2>
+                      {% endif %}
+                      {% if last_product.metafields.custom.color_options %}
+                          {% assign color_options_raw = last_product.metafields.custom.color_options %}
+                          {% assign cleaned_color_options = color_options_raw | remove: '"' | remove: '[' | remove: ']' %}
+                          {% assign color_array = cleaned_color_options | split: ',' %}
+                          <div class="bd-product-colors">
+                              <ul>
+                                  {% for color in color_array %}
+                                  <li>
+                                      <span style="background:{{ color | strip }}"></span>
+                                  </li>
+                                  {% endfor %}
+                              </ul>
+                          </div>
+                      {% endif %}
+                    </div>
+    				{{ last_product.description }}
+                    <a href="{{ last_product.url }}" class="bd-see-product">
+                      See Product
+                    </a>
+                </div>
+    			<div class="bd-product-list-item type2 bd-mobil-product-list-item"> 
+    				<div class="owl-carousel owl-theme" id="productListImage">
+                        {% for image in last_product.images %}
+    					<div class="item">
+    						<div class="bd-product-list-item-image">
+    							<img src="{{ image.src | img_url: '800x800' }}" alt="{{ last_product.title }}">
+                                {% if forloop.first and last_product.metafields.custom.new_product == true %}
+    							<span class="bd-new_product">
+    								New Product
+    							</span>
+                                {% endif %}
+                                {% if forloop.first %}
+    							<h2 class="bd-product-title">
+    								{{ last_product.title }}
+    								{% if last_product.price_varies %}
+                                      <span>{{ last_product.price_min | money }} - {{ last_product.price_max | money }}</span>
+                                    {% else %}
+                                      <span>{{ last_product.price | money }}</span>
+                                    {% endif %}
+    							</h2>
+                                {% endif %}
+                                {% if forloop.first and last_product.metafields.custom.color_options %}
+                                    {% assign color_options_raw = last_product.metafields.custom.color_options %}
+                                    {% assign cleaned_color_options = color_options_raw | remove: '"' | remove: '[' | remove: ']' %}
+                                    {% assign color_array = cleaned_color_options | split: ',' %}
+            						<div class="bd-product-colors">
+        								<ul>
+                                            {% for color in color_array %}
+        									<li>
+                                                <span style="background:{{ color | strip }}"></span>
+                                            </li>
+                                            {% endfor %}
+        								</ul>
+        							</div>
+                                {% endif %}
+    						</div>
+    					</div>
+                        {% endfor %}
+    				</div>
+    				{{ last_product.description }}
+                    <a href="{{ last_product.url }}" class="bd-see-product">
+                      See Product
+                    </a>
+    			</div>         
+    		</div>
+        {% endif %}
+      {% endif %}
+	</div>
+</section>
+<script>
+	$('#productListImage').owlCarousel({
+	    margin: 0, // Eğer öğeler 256px ise margin eklemeyelim veya manuel verelim
+	    nav: false,
+	    dots: false,
+	    autoWidth: true, // Otomatik genişliği kapatıyoruz
+	    loop: false, // Döngü devam edebilir
+	    startPosition: 0, // İlk pozisyon 0 olsun
+	    slideBy: 1, 
+	    items:1
+	});
+	$('#productListImage').on('initialized.owl.carousel', function() {
+	    $('.owl-stage').removeAttr('style').css('transform', 'translate3d(0px, 0px, 0px)');
+	    $('.owl-stage').removeAttr('style').css('width', 'auto');
+	});
+</script>
+
+
+
+
+{% schema %}
+  {
+    "name": "Custom Codes",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Koleksiyon Seçin",
+        "info": "Bir koleksiyon seçin"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Açıklama",
+        "default": "Bu benim özel bölümüm."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Codes",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
